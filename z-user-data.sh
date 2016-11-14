@@ -51,3 +51,5 @@ alias gen-passwd='GenPasswd'
 
 GetAwsRegion() { echo $(curl -s --connect-timeout 2 'http://169.254.169.254/latest/meta-data/placement/availability-zone'); }
 alias get-aws-region='GetAwsRegion'
+
+#EOF

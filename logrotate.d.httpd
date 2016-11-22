@@ -1,0 +1,11 @@
+/var/log/httpd/*log {
+    daily
+    rotate 90
+    missingok
+    ifempty
+    sharedscripts
+    delaycompress
+    postrotate
+        /usr/local/httpd/bin/apachectl graceful > /dev/null 2>/dev/null || true
+    endscript
+}

@@ -46,9 +46,6 @@ VimBackup() { local _bak="$1-$(date +%Y%m%d-%H%M%S).bak"; [ -f "$1" ] && cp -pi 
 alias vim='VimBackup'
 alias vi='VimBackup'
 
-GenPasswd() { local _len=$1 _num=$2; cat /dev/urandom | tr -d -c "0-9a-zA-Z\+\#\&\%\*\-\@" | fold -w ${_len:-12} | head -n ${_num:-1} | sort -u; }
-alias gen-passwd='GenPasswd'
-
 GetAwsRegion() { echo $(curl -s --connect-timeout 2 http://169.254.169.254/latest/meta-data/placement/availability-zone); }
 alias get-aws-region='GetAwsRegion'
 
